@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    transition: 0.5s;
+}
+
+html,
+body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.01em;
+    font-size: 14px;
+
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+
+
+    &.main-hidden {
+        opacity: 0;
+    }
+}
+
+.footer,
+header {
+    flex-shrink: 0;
+}
+
+@media screen and (min-width:1700px) {
+
+    footer,
+    header,
+    .container {
+        width: 1666px !important;
+        margin: 0 auto;
+
+    }
+
+    .container,
+    footer {
+        background: white;
+
+    }
+
+    body {
+        background: $color-gray-light;
+    }
+}

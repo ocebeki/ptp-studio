@@ -1,0 +1,279 @@
+.contact {
+    &__outer-wrapper {
+        background: $color-gray-light;
+    }
+
+    &__wrapper {
+        margin: auto;
+        padding: 50px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        width: 960px;
+        max-width: calc(100% - 100px);
+        min-height: calc(100vh - 161px);
+
+        @media screen and (max-width:$screen-md) {
+            max-width: calc(100% - 70px);
+        }
+
+        @media screen and (max-width:$screen-xs) {
+            max-width: calc(100% - 20px);
+            padding-top: 20px;
+        }
+    }
+
+    &__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 550px;
+    }
+
+    &__title {
+        font-family: 'Lato';
+        font-weight: 800;
+        font-size: 30px;
+        margin-bottom: 16px;
+
+        @media screen and (max-width:$screen-xs) {
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+    }
+
+    &__subtitle {
+        line-height: 24px;
+        margin-top: 18px;
+        font-family: 'Lato';
+        font-weight: 400;
+
+        @media screen and (max-width:$screen-xs) {
+            line-height: 18px;
+
+        }
+
+    }
+
+    &__info-title-wrapper {
+        display: flex;
+        width: 100%;
+        margin-top: 45px;
+    }
+
+    &__info-title-left,
+    &__info-title-right {
+        width: 50%;
+
+        @media screen and (max-width:$screen-md) {
+            opacity: 0.6;
+
+            &:hover {
+                opacity: 1;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__info-title-left {
+        &.visible {
+            opacity: 1
+        }
+    }
+
+    &__info-title-right {
+        &.visible {
+            opacity: 1
+        }
+    }
+
+    &__form-wrapper {
+        display: flex;
+        width: 100%;
+
+        @media screen and (max-width:$screen-md) {
+            justify-content: center;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__left,
+    &__right {
+        width: 50%;
+
+        @media screen and (max-width:$screen-md) {
+            display: none
+        }
+    }
+
+    &__row {
+        &:nth-child(1) {
+            margin-bottom: 45px;
+        }
+
+        &:last-child {
+            .contact__form-info {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__row-two-col {
+        display: flex;
+        margin: 15px 0;
+        width: 100%;
+
+        &:nth-child(2) {
+            margin-top: 0;
+        }
+
+        @media screen and (max-width:$screen-xs) {
+            margin: 0;
+            display: block;
+        }
+    }
+
+    &__show-info {
+        display: flex;
+
+        @media screen and (max-width:$screen-md) {
+            width: 100%;
+
+        }
+    }
+
+    &__form-title {
+        font-family: 'Lato';
+        font-weight: 800;
+        font-size: 24px;
+        margin-bottom: 9px;
+
+        @media screen and (max-width:$screen-xs) {
+
+            font-size: 20px;
+        }
+    }
+
+    br {
+        display: none;
+
+        @media screen and (max-width:655px) {
+            display: block
+        }
+
+    }
+
+    &__form-subtitle {
+        font-size: 14px;
+        font-family: "Lato";
+        font-weight: 400;
+        margin-bottom: 52px;
+        margin-top: 10px;
+
+        @media screen and (max-width:$screen-md) {
+            margin-bottom: 23px;
+            margin-top: 50px;
+        }
+    }
+
+    &__form-low-title {
+        font-size: 17px;
+        font-weight: 800;
+        margin-bottom: 16px;
+
+        @media screen and (max-width:$screen-xs) {
+            margin-bottom: 7px;
+            text-align: center;
+
+        }
+    }
+
+    &__info-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width:$screen-md) {
+            text-align: center;
+            margin: auto
+        }
+    }
+
+    &__form-info {
+        font-size: 14px;
+        font-family: 'Lato';
+        font-weight: 400;
+        margin-bottom: 36px;
+    }
+
+    &__input {
+        height: 50px;
+        margin-right: 28;
+        width: 100%;
+
+        @media screen and (max-width:$screen-xs) {
+            margin: 6px 0;
+            margin-right: 7px;
+        }
+
+        &:nth-child(2) {
+            margin-right: 0;
+        }
+    }
+
+    &__input,
+    &__message {
+        padding: 15px 15px;
+        border: none;
+
+        @media screen and (max-width:$screen-xs) {
+            padding: 8px 8px;
+            font-size: 13px;
+        }
+    }
+
+    &__message {
+        height: 135px;
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    &__btn {
+        width: 220px;
+        height: 50px;
+        align-self: flex-end;
+        color: white;
+        background: black;
+        transition: 0.2s;
+        opacity: 0.8;
+        margin-top: 30px;
+        font-size: 16px;
+        letter-spacing: 0.02em;
+
+
+        @media screen and (max-width:$screen-md) {
+            font-size: 13px;
+            width: 200px;
+        }
+
+        @media screen and (max-width:$screen-xs) {
+            font-size: 13px;
+            width: 160px;
+        }
+
+        &:hover {
+            opacity: 1;
+            transform: scale(0.95);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+/*
+Theme Name: PTP
+Author: Pawel Dolinski
+License: MIT
+*/
+
+/*# sourceMappingURL=style.css.map */
+@import './varaibles';
+@import './fonts';
+@import './reset';
+@import './global';
+@import './helpers';
+@import './slick';
+
+@import './components/header';
+@import './components/languages';
+@import './components/hero';
+@import './components/footer';
+@import './components/gallery';
+@import './components/aboutMe';
+@import './components/contact';
+
+////////////////////////////////////////
