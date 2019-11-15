@@ -1,12 +1,25 @@
 .languages {
     display: flex;
     justify-content: flex-end;
+    min-width: 190px;
 
-    &__btn {
+    @media screen and (max-width:$screen-md) {
+        min-width: 115px;
+    }
+
+    @media screen and (max-width:$screen-xs) {
+        min-width: 86px;
+    }
+
+    li {
         opacity: 0.54;
 
         &:hover {
             opacity: 1;
+        }
+
+        &:first-child {
+            margin-right: 10px;
         }
 
         &--active {

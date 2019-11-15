@@ -14,7 +14,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        min-height: calc(100vh - 160px);
+        min-height: calc(100vh - 80px);
         position: relative;
         overflow: hidden;
 
@@ -110,22 +110,18 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        opacity: 0.8;
+        opacity: 0.5;
         z-index: 10;
         width: 33px;
+        background: white;
+        height: 30px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             opacity: 1;
             cursor: pointer;
-
-        }
-
-        @media screen and (max-width:$screen-md) {
-            background: white;
-            height: 44px;
-            display: flex !important;
-            align-items: center;
-
         }
 
         @media screen and (max-width:$screen-xs) {

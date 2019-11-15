@@ -52,6 +52,9 @@
         font-size: 14px;
         font-family: 'Lato';
         letter-spacing: 0.021em;
+        cursor: pointer;
+
+
 
         @media screen and (max-width:$screen-sm) {
             font-size: 11px;
@@ -66,12 +69,16 @@
     &__separator {
         margin: 0 15px 0 20px;
 
+        &:nth-child(10) {
+            display: none;
+        }
+
+
         @media screen and (max-width:$screen-sm) {
             font-size: 11px;
             margin: 0 8px;
             line-height: 22px;
         }
-
     }
 
     &__btn-wrapper {
@@ -109,6 +116,52 @@
         }
     }
 
+    &__grid-sizer {
+        width: 33.333%;
+        padding: 5px;
+
+        @media screen and (max-width:1000px) {
+            width: 50%
+        }
+
+        @media screen and (max-width:600px) {
+            width: 100%;
+            padding: 5px 30px
+        }
+    }
+
+    &__grid-sizer-sm {
+        width: 33.333%;
+        padding: 5px;
+
+        @media screen and (max-width:1000px) {
+            width: 50%
+        }
+
+        @media screen and (max-width:600px) {
+            width: 100%;
+            padding: 5px 30px
+        }
+    }
+
+    &__grid-sizer-lg {
+        width: 100%;
+        padding: 5px 300px;
+
+        @media screen and (max-width:$screen-lg) {
+            padding: 5px 150px
+        }
+
+        @media screen and (max-width:$screen-md) {
+            padding: 5px 100px
+        }
+
+        @media screen and (max-width:$screen-sm) {
+            padding: 5px 20px
+        }
+    }
+
+
     &__image {
         width: 100%;
     }
@@ -121,5 +174,4 @@
             max-width: 100%;
         }
     }
-
 }

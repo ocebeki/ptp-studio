@@ -246,6 +246,11 @@
         margin-top: 15px;
     }
 
+    &__btn-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+
     &__btn {
         width: 220px;
         height: 50px;
@@ -276,4 +281,14 @@
             transition: 0.2s;
         }
     }
+}
+
+.wpcf7-form-control-wrap {
+    margin-right: 20px;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap:nth-child(3) {
+    margin-right: 0;
+
 }

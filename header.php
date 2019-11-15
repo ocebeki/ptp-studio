@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name=”description” content=”Professional photography studio” />
+
+    <link rel="shortcut icon" type="image/png" href="assets/images/photo-camera.png" />
+
+    <title>PTPSTUDIO</title>
 
     <?php wp_head(); ?>
 </head>
@@ -31,12 +35,12 @@
         <div class="container">
             <nav class="header__nav-wrapper">
                 <?php
-								wp_nav_menu( array(
-									'theme_location' => 'primary',
-									'container' => false,
-									'menu_class' => 'header__list'
-								) );	
-							?>
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'container' => false,
+						'menu_class' => 'header__list'
+						) );	
+					?>
             </nav>
         </div>
         </div>

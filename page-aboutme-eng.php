@@ -13,7 +13,7 @@ get_header();
                 </div>
                 <div class="about-me__box-right">
                     <div class="about-me__title-wrapper">
-                        <p class="about-me__introduction">KILKA SŁÓW O MNIE</p>
+                        <p class="about-me__introduction">A FEW WORDS ABOUR ME</p>
                         <h1 class="about-me__title"> <?php the_field('title'); ?></h1>
                         <div class="line line-black"></div>
                         <div class="about-me__text-wrapper">

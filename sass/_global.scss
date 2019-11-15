@@ -24,10 +24,11 @@ body {
 
 main {
     flex: 1 0 auto;
-
+    transition: 0;
 
     &.main-hidden {
-        opacity: 0;
+        display: none;
+        transition: 0;
     }
 }
 

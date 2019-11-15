@@ -1,13 +1,27 @@
 window.addEventListener("load", () => {
   const toggleBtn = document.querySelector(".header__toggle-btn");
-  const toggleBtnLine = document.querySelectorAll(".header__toggle-btn-line");
-  const nav = document.querySelector(".header__nav-wrapper");
-  const navItem = document.querySelectorAll('.header__list-item')
-  const mainWrapper = document.querySelector("main");
-  const masonry = document.querySelector('.gallery__grid-wrapper')
-  const readMore = document.querySelector('.about-me__read-more-wrapper')
-  const contactInfo = document.querySelector('.contact__info-title-left')
-  const contactContact = document.querySelector('.contact__info-title-right')
+  toggleBtnLine = document.querySelectorAll(".header__toggle-btn-line");
+  nav = document.querySelector(".header__nav-wrapper");
+  navItem = document.querySelectorAll('.header__list-item')
+  mainWrapper = document.querySelector("main");
+  changeGridBtn = document.querySelectorAll('.gallery__btn');
+  readMore = document.querySelector('.about-me__read-more-wrapper')
+  contactInfo = document.querySelector('.contact__info-title-left')
+  contactContact = document.querySelector('.contact__info-title-right')
+  languages = document.querySelectorAll('.languages li')
+  console.log(languages)
+
+  const changeLang = (e) => {
+    let target = e.target
+    languages.forEach(btn => {
+      btn.classList.remove("active");
+      target.classList.add("active");
+    })
+  }
+
+  languages.forEach(btn => {
+    btn.addEventListener('click', changeLang)
+  })
 
 
   const openMobileNav = () => {
@@ -28,12 +42,27 @@ window.addEventListener("load", () => {
     };
   }
 
+  console.log()
   const openReadMore = () => {
-    const text = document.querySelector('.about-me__text-addition-wrapper');
+    const text = document.querySelector('.about-me__text-wrapper');
     const img = document.querySelector('.about-me__img');
-    readMore.style.display = "none";
-    text.classList.add('about-me__text-addition-wrapper--read-more');
-    img.style.minHeight = 'unset'
+    let readMoreText = readMore.querySelector('.about-me__read-more')
+
+    text.classList.toggle('about-me__text-wrapper--read-more');
+    img.style.minHeight = 'unset';
+
+    if (readMoreText.classList.contains("more")) {
+      readMoreText.innerHTML = "CZYTAJ MNIEJ";
+      readMoreText.classList.remove("more")
+      readMoreText.classList.add("less")
+
+    } else if (readMoreText.classList.contains("less")) {
+      readMoreText.innerHTML = "CZYTAJ WIĘCEJ"
+      readMoreText.classList.remove("less")
+      readMoreText.classList.add("more")
+      text.scrollTo(0, 0)
+
+    }
   }
 
   const openShowMore = (e) => {
@@ -61,90 +90,6 @@ window.addEventListener("load", () => {
     }
 
   }
-
-  if (masonry) {
-    let changeGridBtn = document.querySelectorAll('.gallery__btn');
-    let macyInstance = Macy({
-      container: ".gallery__grid-wrapper",
-      columns: 3,
-      margin: {
-        x: 15,
-        y: 15
-      },
-      mobileFirst: true,
-      breakAt: {
-        200: {
-          columns: 1
-        },
-        600: {
-          columns: 2
-        },
-        900: {
-          columns: 3
-        }
-      }
-    });
-
-    let changeGallery = (e) => {
-
-      const target = e.target.closest('.gallery__btn');
-      const buttons = document.querySelectorAll(".gallery__btn");
-
-
-      buttons.forEach(btn => {
-        btn.classList.remove("gallery__btn--active");
-        target.classList.add("gallery__btn--active");
-      })
-
-      if (target.classList.contains("gallery__btn--single")) {
-        let wrapper = document.querySelector(".gallery__grid-wrapper");
-        wrapper.classList.add('gallery__grid-wrapper--single');
-        wrapper.classList.remove('gallery__grid-wrapper--grid');
-
-
-        let macyInstance2 = Macy({
-          container: ".gallery__grid-wrapper--single",
-          columns: 1,
-          margin: {
-            x: 15,
-            y: 15
-          },
-          mobileFirst: true
-        });
-      }
-      else if (target.classList.contains("gallery__btn--grid")) {
-        let wrapper = document.querySelector(".gallery__grid-wrapper");
-        wrapper.classList.add('gallery__grid-wrapper--grid')
-        wrapper.classList.remove('gallery__grid-wrapper--single')
-
-        let macyInstance2 = Macy({
-          container: ".gallery__grid-wrapper",
-          columns: 3,
-          margin: {
-            x: 15,
-            y: 15
-          },
-          mobileFirst: true,
-          breakAt: {
-            200: {
-              columns: 1
-            },
-            600: {
-              columns: 2
-            },
-            900: {
-              columns: 3
-            }
-          }
-        });
-      }
-    }
-
-    changeGridBtn.forEach(btn => {
-      btn.addEventListener('click', changeGallery)
-    })
-  }
-
   toggleBtn.addEventListener("click", openMobileNav);
 
   navItem.forEach(link => {

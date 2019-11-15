@@ -14,21 +14,20 @@
                     </div>
                 </div>
                 <div class="gallery__filters-wrapper">
-                    <?php if( have_rows('filters') ): 
-                    $count = 0;
-                     while ( have_rows('filters') ) : the_row(); ?>
-                    <div class="gallery__filter <?php 
-              if (!$count) { ?>gallery__filter--active<?php }?>" data-filter="<?php the_sub_field('category'); ?>">
-                        <?php the_sub_field('filter'); ?></div>
+                    <div class="gallery__filter gallery__filter--active test" data-filter="*">ALL</div>
                     <div class='gallery__separator'>/</div>
-                    <?php 
-                    $count++;
-                    endwhile;
-                    endif;
-                    ?>
+                    <div class="gallery__filter" data-filter=".architektura">ARCHITECTURE</div>
+                    <div class='gallery__separator'>/</div>
+                    <div class="gallery__filter" data-filter=".portrety">PORTRAITS</div>
+                    <div class='gallery__separator'>/</div>
+                    <div class="gallery__filter" data-filter=".sport">SPORT</div>
+                    <div class='gallery__separator'>/</div>
+                    <div class="gallery__filter" data-filter=".pack-shot">PACK-SHOT</div>
+
                 </div>
             </div>
             <div class="gallery__grid-wrapper gallery__grid-wrapper--grid">
+
                 <?php if( have_rows('gallery') ): ?>
                 <?php while ( have_rows('gallery') ) : the_row(); ?>
                 <div class="gallery__gutter-sizer"></div>
