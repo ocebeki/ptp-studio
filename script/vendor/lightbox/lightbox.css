@@ -235,7 +235,7 @@ body.lb-disable-scrolling {
 
 .lb-data .lb-close {
   position: absolute;
-  top: -20px;
+  top: -10px;
   left: 50%;
   transform: translate(-50%, -50%);
   display: block;

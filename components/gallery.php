@@ -28,12 +28,12 @@
                     ?>
                 </div>
             </div>
-            <div class="gallery__grid-wrapper gallery__grid-wrapper--grid">
+            <div class="gallery__grid-wrapper gallery__grid-wrapper--grid" id="lightgallery">
                 <?php if( have_rows('gallery') ): ?>
                 <?php while ( have_rows('gallery') ) : the_row(); ?>
                 <div class="gallery__gutter-sizer"></div>
-                <a class="gallery__image-wrapper gallery__grid-sizer <?php the_sub_field('klasa'); ?>"
-                    href=<?php the_sub_field('image'); ?> data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
+                <a class="gallery__image-wrapper gallery__grid-sizer <?php the_sub_field('klasa'); ?> <?php the_sub_field('wszystkie'); ?>"
+                    href=<?php the_sub_field('image'); ?>>
                     <img class="gallery__image" src=<?php the_sub_field('image'); ?> />
                 </a>
                 <?php endwhile; ?>
@@ -42,108 +42,3 @@
         </div>
     </div>
 </section>
-
-
-<!-- <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_03.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk"> <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_03.jpg" />
-            </a>
-
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_05.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk"> <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_05.jpg" />
-            </a>
-
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_07.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_07.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_10.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_10.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_14.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_14.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_17.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_17.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_20.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_20.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_21.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_21.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_21.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_24.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_28.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_28.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_29.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_29.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_30.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_30.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_33.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_33.jpg" />
-            </a>
-
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_36.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_36.jpg" />
-            </a>
-            <a class="gallery__image-wrapper"
-                href="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_40.jpg"
-                data-lightbox="gallery" data-title="fot. Paweł Tichoniuk">
-                <img class="gallery__image"
-                    src="<?php print(get_template_directory_uri()); ?>/assets/images/gallery/photo_40.jpg" />
-            </a> -->
