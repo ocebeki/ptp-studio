@@ -1,5 +1,7 @@
 .hero {
     margin-bottom: 80px;
+    position: relative;
+    z-index: 20;
 
     @media screen and (max-width:$screen-sm) {
         margin-bottom: 35px;
@@ -135,13 +137,6 @@
 
         @media screen and (max-width:$screen-md) {
             right: 16px;
-        }
-
-        img {
-            @media screen and (max-width:$screen-md) {
-                margin-left: 9px;
-            }
-
         }
     }
 

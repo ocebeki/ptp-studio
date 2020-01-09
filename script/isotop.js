@@ -1,95 +1,79 @@
-// window.addEventListener("load", () => {
-//     const elem = document.querySelector('.gallery__grid-wrapper--grid');
-//     if (elem) {
-//         let iso;
+jQuery(window).load(function () {
 
-//         iso = new Isotope(elem, {
-//             itemSelector: '.gallery__image-wrapper',
-//             layoutMode: 'masonry',
-//             percentPosition: true,
-//             filter: ".wszystkie",
-//             columnWidth: '.gallery__grid-sizer',
+  jQuery('.gallery__filter').click(function () {
+    jQuery('.gallery__filter').removeClass('gallery__filter--active');
+    jQuery(this).addClass('gallery__filter--active')
+  })
 
-//         });
+  jQuery('.gallery__btn').click(function () {
+    jQuery('.gallery__btn').removeClass('gallery__btn--active');
+    jQuery(this).addClass('gallery__btn--active');
+    if (jQuery('.gallery__btn--grid').hasClass('gallery__btn--active')) {
+      jQuery('.gallery__image-wrapper').removeClass("gallery__grid-sizer-lg")
+      jQuery('.gallery__image-wrapper').addClass("gallery__grid-sizer-sm")
 
-//         let filterFns = {}
+      jQuery('#lightgallery').isotope({
+        itemSelector: '.gallery__image-wrapper',
+        layoutMode: 'masonry',
+        percentPosition: true,
+        filter: ".wszystkie",
+        columnWidth: '.gallery__grid-sizer-lg',
+      });
 
-//         let filtersElem = document.querySelector('.gallery__filters-wrapper');
-//         filtersElem.addEventListener('click', function (event) {
-//             if (!matchesSelector(event.target, 'div')) {
-//                 return;
-//             }
-//             let filterValue = event.target.getAttribute('data-filter');
-//             console.log(filterValue)
-//             // use matching filter function
-//             filterValue = filterFns[filterValue] || filterValue;
-//             iso.arrange({ filter: filterValue });
-//         });
+    } else if (jQuery('.gallery__btn--single').hasClass('gallery__btn--active')) {
+      jQuery('.gallery__image-wrapper').removeClass("gallery__grid-sizer-sm")
+      jQuery('.gallery__image-wrapper').addClass("gallery__grid-sizer-lg")
+
+      jQuery('#lightgallery').isotope({
+        itemSelector: '.gallery__image-wrapper',
+        layoutMode: 'masonry',
+        percentPosition: true,
+        filter: ".wszystkie",
+        columnWidth: '.gallery__grid-sizer-sm',
+      });
+    }
+
+  })
+
+  jQuery('.lang-item').click(function () {
+    jQuery('.lang-item').removeClass('current-lang');
+    jQuery(this).addClass('current-lang')
+  })
+
+  let $gallery = jQuery('#lightgallery');
+
+  $gallery.lightGallery({
+    mode: 'lg-fade',
+    hash: true,
+    download: true,
+    enableDrag: true,
+    enableSwipe: true,
+    thumbnail: true,
+    animateThumb: true,
+    showThumbByDefault: true
+  });
+
+  jQuery('#lightgallery').isotope({
+
+    itemSelector: '.gallery__image-wrapper',
+    layoutMode: 'masonry',
+    percentPosition: true,
+    filter: ".wszystkie",
+    columnWidth: '.gallery__grid-sizer-sm',
+  });
+
+  jQuery('.gallery__filter').on('click', function () {
+    var filterValue = jQuery(this).attr('data-filter');
+    jQuery('#lightgallery').isotope({ filter: filterValue });
+    $gallery.data('lightGallery').destroy(true);
+    $gallery.lightGallery({
+      selector: filterValue.replace('.wszystkie', '')
+    });
+  });
+});
 
 
-//         const buttonGroups = document.querySelectorAll('.gallery__filter');
-//         buttonGroups.forEach(button => {
-//             button.addEventListener('click', (event) => {
-//                 if (button.classList.contains('.gallery__filter--active')) {
-//                     button.classList.remove('.gallery__filter--active')
-//                 } else {
-//                     buttonGroups.forEach(btn => {
-//                         btn.classList.remove('gallery__filter--active')
-//                     })
-//                     button.classList.add('gallery__filter--active')
-//                 }
-//             });
-//         })
 
-//         let changeGallery = (e) => {
 
-//             const target = e.target.closest('.gallery__btn');
-//             const buttons = document.querySelectorAll(".gallery__btn");
 
-//             buttons.forEach(btn => {
-//                 btn.classList.remove("gallery__btn--active");
-//                 target.classList.add("gallery__btn--active");
-//             })
 
-//             if (target.classList.contains("gallery__btn--single")) {
-//                 let wrapper = document.querySelectorAll(".gallery__grid-sizer");
-//                 wrapper.forEach(img => {
-//                     img.classList.add('gallery__grid-sizer-lg')
-//                     img.classList.remove('gallery__grid-sizer-sm')
-//                 })
-//                 let elem = document.querySelector('.gallery__grid-wrapper--grid');
-//                 iso = new Isotope(elem, {
-//                     itemSelector: '.gallery__image-wrapper',
-//                     layoutMode: 'masonry',
-//                     percentPosition: true,
-//                     filter: ".wszystkie",
-//                     columnWidth: '.gallery__grid-sizer-lg',
-
-//                 });
-
-//             }
-//             else if (target.classList.contains("gallery__btn--grid")) {
-//                 let wrapper = document.querySelectorAll(".gallery__grid-sizer");
-//                 wrapper.forEach(img => {
-//                     img.classList.add('gallery__grid-sizer-sm')
-//                     img.classList.remove('gallery__grid-sizer-lg')
-//                 })
-//                 let elem = document.querySelector('.gallery__grid-wrapper--grid');
-//                 iso = new Isotope(elem, {
-//                     itemSelector: '.gallery__image-wrapper',
-//                     layoutMode: 'masonry',
-//                     percentPosition: true,
-//                     filter: ".wszystkie",
-//                     columnWidth: '.gallery__grid-sizer-sm',
-
-//                 });
-//             }
-//             return iso
-//         }
-
-//         changeGridBtn.forEach(btn => {
-//             btn.addEventListener('click', changeGallery)
-//         })
-//     }
-
-// })

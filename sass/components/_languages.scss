@@ -11,7 +11,7 @@
         min-width: 86px;
     }
 
-    li {
+    a {
         opacity: 0.54;
 
         &:hover {
@@ -21,13 +21,19 @@
         &:first-child {
             margin-right: 10px;
         }
-
-        &--active {
-            font-weight: 700;
-        }
     }
 
     &__separator {
         margin: 0 9px 0 8px;
+    }
+}
+
+.current-lang {
+    font-weight: bold;
+    font-size: 15px;
+
+    a {
+        opacity: 1;
+        color: black;
     }
 }

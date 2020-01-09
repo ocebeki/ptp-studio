@@ -201,5 +201,10 @@
 
     &__arrow {
         margin-left: 16px;
+
+        svg {
+            width: 36px;
+            height: 15px;
+        }
     }
 }

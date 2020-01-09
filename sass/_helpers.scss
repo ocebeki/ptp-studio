@@ -24,15 +24,6 @@
     width: 100%;
     margin: auto;
     box-sizing: border-box;
-    // padding: 0 80px;
-
-    // @media screen and (max-width:$screen-md) {
-    //     padding: 0 30px;
-    // }
-
-    // @media screen and (max-width:$screen-xs) {
-    //     padding: 0;
-    // }
 }
 
 .column {
@@ -58,4 +49,38 @@
 .line-black {
     background: black;
     height: 2px
+}
+
+.btn-up {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background: black;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 10;
+
+
+    &:hover {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    svg {
+        width: 30px;
+        height: 30px;
+
+        path {
+            fill: #fff;
+        }
+    }
+
 }

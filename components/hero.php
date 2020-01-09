@@ -10,11 +10,11 @@
             <a class="hero__btn" href="#gallery">PORTFOLIO</a>
         </div>
         <div class="hero__wrapper">
-            <?php if( have_rows('slider') ): ?>
-            <?php while ( have_rows('slider') ) : the_row(); ?>
+            <?php if( have_rows('slider', 26) ): ?>
+            <?php while ( have_rows('slider', 26) ) : the_row(); ?>
             <div class="hero__gallery">
                 <div class="hero__item">
-                    <img class="hero__image" src=<?php the_sub_field('image'); ?> />
+                    <img class="hero__image" src=<?php the_sub_field('image', 26); ?> />
                 </div>
             </div>
             <?php endwhile; ?>

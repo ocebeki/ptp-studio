@@ -9,20 +9,6 @@ window.addEventListener("load", () => {
   contactInfo = document.querySelector('.contact__info-title-left')
   contactContact = document.querySelector('.contact__info-title-right')
   languages = document.querySelectorAll('.languages li')
-  console.log(languages)
-
-  const changeLang = (e) => {
-    let target = e.target
-    languages.forEach(btn => {
-      btn.classList.remove("active");
-      target.classList.add("active");
-    })
-  }
-
-  languages.forEach(btn => {
-    btn.addEventListener('click', changeLang)
-  })
-
 
   const openMobileNav = () => {
     nav.classList.toggle("open");
@@ -38,11 +24,9 @@ window.addEventListener("load", () => {
       else {
         null
       }
-
     };
   }
 
-  console.log()
   const openReadMore = () => {
     const text = document.querySelector('.about-me__text-wrapper');
     const img = document.querySelector('.about-me__img');
